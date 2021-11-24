@@ -18,7 +18,7 @@ module "resource_group"{
    
 }
 
-module "vm"{
+module "azurerm_virtual_machine"{
   source = "../../modules/marcilli"
   project_name        = "FilipeLABS"
   environment         = "dev"
@@ -26,23 +26,23 @@ module "vm"{
      
 }
 
-module "vnet"{
+module "azurerm_virtual_network"{
   source = "../../modules/vnet"
   project_name        = "FilipeLABS"
   environment         = "dev"
   location            = "EastUS"
 }
 
-#module "internal"{
-#  source = "../../modules/vnet"
-#  project_name        = "FilipeLABS"
-#  environment         = "dev"
-#  location            = "EastUS"
-#}
+module "azurerm_subnet"{
+  source = "../../modules/vnet"
+  project_name        = "FilipeLABS"
+  environment         = "dev"
+  location            = "EastUS"
+}
 
-#module "net-int"{
-#  source = "../../modules/vnet"
-#  project_name        = "FilipeLABS"
-#  environment         = "dev"
-#  location            = "EastUS"
-#}
+module "azurerm_network_interface"{
+  source = "../../modules/vnet"
+  project_name        = "FilipeLABS"
+  environment         = "dev"
+  location            = "EastUS"
+}
