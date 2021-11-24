@@ -15,4 +15,9 @@ module "resource_group"{
   project_name        = "FilipeLABS-v.1.5"
   environment         = "dev"
   location            = "EastUS"
+
+   tags = {
+    "ENV"        = "LABS"
+    
+  }
 }
