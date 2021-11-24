@@ -35,14 +35,14 @@ module "azurerm_virtual_network"{
 
 module "azurerm_subnet"{
   source = "../../modules/vnet"
-  project_name        = "FilipeLABS"
-  environment         = "dev"
-  location            = "EastUS"
+ # project_name        = "FilipeLABS"
+ # environment         = "dev"
+ # location            = "EastUS"
 }
 
 module "azurerm_network_interface"{
   source = "../../modules/vnet"
-  project_name        = "FilipeLABS"
-  environment         = "dev"
-  location            = "EastUS"
+ # project_name        = "FilipeLABS"
+ # environment         = "dev"
+ # location            = "EastUS"
 }
