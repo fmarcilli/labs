@@ -23,7 +23,7 @@ module "azurerm_virtual_machine"{
   project_name        = "FilipeLABS"
   environment         = "dev"
   location            = "EastUS"
-     
+    
 }
 
 module "azurerm_virtual_network"{
