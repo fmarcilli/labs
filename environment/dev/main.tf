@@ -12,7 +12,7 @@ provider "azurerm" {
 
 module "resource_group"{
   source = "../../modules/marcilli"
-  project_name        = "FilipeLABS-v.1.2"
+  project_name        = "FilipeLABS-v.1.3"
   environment         = "dev"
   location            = "EastUS"
 }
