@@ -26,3 +26,23 @@ module "vm"{
      
 }
 
+module "vnet"{
+  source = "../../modules/vnet"
+  project_name        = "FilipeLABS"
+  environment         = "dev"
+  location            = "EastUS"
+}
+
+module "internal"{
+  source = "../../modules/vnet"
+  project_name        = "FilipeLABS"
+  environment         = "dev"
+  location            = "EastUS"
+}
+
+module "net-int"{
+  source = "../../modules/vnet"
+  project_name        = "FilipeLABS"
+  environment         = "dev"
+  location            = "EastUS"
+}
