@@ -15,6 +15,15 @@ module "resource_group"{
   project_name        = "FilipeLABS"
   environment         = "dev"
   location            = "EastUS"
+   
+}
+
+module "vm"{
+  source = "../../modules/marcilli"
+  project_name        = "FilipeLABS"
+  environment         = "dev"
+  location            = "EastUS"
 
    
 }
+
