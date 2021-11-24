@@ -11,6 +11,7 @@ resource "azurerm_resource_group" "rg_all" {
 resource "azurerm_virtual_machine" "vm" {
   name     = "VM-${var.project_name}-${var.environment}"
   location = var.location
+  resource_group_name = azurerm_resource_group.rg_all.name
   network_interface_ids = [azurerm_network_interface.vm.id]
   vm_size               = "Standard_DS1_v2"
    storage_image_reference {

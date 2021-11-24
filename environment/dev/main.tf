@@ -23,11 +23,6 @@ module "vm"{
   project_name        = "FilipeLABS"
   environment         = "dev"
   location            = "EastUS"
-  resource_group = module "resource_group" {
-    source = "../../modules/marcilli"
-    
-  }
-
-   
+     
 }
 
