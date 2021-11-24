@@ -28,9 +28,9 @@ module "azurerm_virtual_machine"{
 
 module "azurerm_virtual_network"{
   source = "../../modules/vnet"
-  project_name        = "FilipeLABS"
-  environment         = "dev"
-  location            = "EastUS"
+  #project_name        = "FilipeLABS"
+  #environment         = "dev"
+  #location            = "EastUS"
 }
 
 module "azurerm_subnet"{
