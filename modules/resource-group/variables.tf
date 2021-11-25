@@ -12,3 +12,4 @@ variable location {
   type = string
   description = "Resource Location"
 }
+

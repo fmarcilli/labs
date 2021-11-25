@@ -5,9 +5,3 @@ resource "azurerm_resource_group" "rg_all" {
   location = var.location
 }
 
-output "rg_all" {
-  description = "RG criado com sucesso"
-  location = var.location
-  name = azurerm_resource_group.rg_all.name 
-  value = data.azurerm_resource_group.rg_all.id
-}
