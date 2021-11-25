@@ -6,7 +6,7 @@ resource "azurerm_storage_account" "sto-account" {
   account_replication_type = "GRS"
 
   tags = {
-    environment = "dev"
+    environment = "DEV"
   }
 }
 
