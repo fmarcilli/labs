@@ -10,7 +10,7 @@ resource "azurerm_app_service_plan" "service-plan" {
 }
 
 resource "azurerm_app_service" "app-service" {
-  name                = "example-app-service"
+  name                = "marcilli-app-service"
   location            = var.location
   resource_group_name = var.rg_name
   app_service_plan_id = azurerm_app_service_plan.service-plan.id
