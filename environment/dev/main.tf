@@ -21,7 +21,7 @@ module "azurerm_storage_account"{
   project_name        = "FilipeLABS"
   environment         = "dev"
   location            = module.resource_group.location
-  resource_group_name = module.resource_group.name
+ # resource_group_name = module.resource_group.name
   
    
 }
