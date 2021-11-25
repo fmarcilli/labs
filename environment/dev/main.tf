@@ -8,7 +8,7 @@ provider "azurerm" {
 
 # Resource Group Module
 module "resource_group"{
-  source = "../../modules/marcilli"
+  source = "../../modules/resource-group"
   project_name        = "FilipeLABS"
   environment         = "dev"
   location            = "EastUS"
