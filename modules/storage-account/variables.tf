@@ -13,4 +13,8 @@ variable location {
   description = "Resource Location"
 }
 
+variable rg_name {
+  type = string
+  description = "Resource Location"
+}
 
