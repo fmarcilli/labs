@@ -38,7 +38,7 @@ module "azurerm_app_service_plan"{
 }
 
 
-# Service Plan Module
+# Service App Module
 module "azurerm_app_service"{
   source = "../../modules/service-app"
   project_name        = "FilipeLABS"
