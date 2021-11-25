@@ -8,6 +8,6 @@ resource "azurerm_resource_group" "rg_all" {
 output "rg_all" {
   description = "RG criado com sucesso"
   location = var.location
-  name = "RG-${var.project_name}-${var.environment}"
+  name = azurerm_resource_group.rg_all.name 
   value = data.azurerm_resource_group.rg_all.id
 }
