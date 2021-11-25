@@ -14,6 +14,18 @@ module "resource_group"{
   location            = "EastUS"
    
 }
+
+# Storage Account Module
+module "azurerm_storage_account"{
+  source = "../../modules/storage-account"
+  project_name        = "FilipeLABS"
+  environment         = "dev"
+  location            = "EastUS"
+   
+}
+
+
+
 # VM Module
 #module "azurerm_virtual_machine"{
  # source = "../../modules/marcilli"
