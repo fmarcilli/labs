@@ -1,5 +1,5 @@
 terraform {
-    backend "azurerm" {
+    
        backend "azurerm" {
     resource_group_name  = "RG-Terraform"
     storage_account_name = "terraformmarcilli"
@@ -7,7 +7,7 @@ terraform {
     key                  = "dev.terraform.tfstate"
     }
   }
-}
+
 
 provider "azurerm" {
     features {}
