@@ -33,10 +33,8 @@ module "azurerm_app_service_plan"{
   environment         = "dev"
   location            = module.resource_group.location
   rg_name             = module.resource_group.name
-  
-   
+    
 }
-
 
 # Service App Module
 module "azurerm_app_service"{
