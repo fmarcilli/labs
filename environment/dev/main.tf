@@ -32,7 +32,7 @@ module "azurerm_app_service_plan"{
   project_name        = "FilipeLABS"
   environment         = "dev"
   location            = module.resource_group.location
-  rg_name             = module.resource_group.name
+  serviceplan_name             = module.resource_group.name
   
    
 }

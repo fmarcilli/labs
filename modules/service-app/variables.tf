@@ -13,8 +13,8 @@ variable location {
   description = "Resource Location"
 }
 
-variable rg_name {
+variable serviceplan_name  {
   type = string
-  description = "Resource Location"
+  description = "Service Plan Name"
 }
 
