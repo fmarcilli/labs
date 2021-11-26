@@ -1,6 +1,6 @@
 terraform {
     
-       backend "azurerm" {
+    backend "azurerm" {
     resource_group_name  = "RG-Terraform"
     storage_account_name = "terraformmarcilli"
     container_name       = "envi-lab"
