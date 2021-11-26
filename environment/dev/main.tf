@@ -6,6 +6,7 @@ terraform {
     container_name       = "envi-lab"
     key                  = "dev.terraform.tfstate"
     }
+  }
 }
 
 provider "azurerm" {
