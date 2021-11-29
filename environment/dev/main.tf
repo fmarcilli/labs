@@ -39,7 +39,7 @@ module "azurerm_virtual_machine"{
   environment         = "dev"
   location            = module.resource_group.location
   rg_name             = module.resource_group.name
-  subnet_id            = module.azurerm_network_interface
+  subnet_id           = module.azurerm_network_interface[0]
    
 }
 

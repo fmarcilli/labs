@@ -1,7 +1,7 @@
 # VNET
 
 resource "azurerm_virtual_network" "vnet" {
-  name                = "example-network"
+  name                = "marcilli-network"
   address_space       = ["10.0.0.0/16"]
   location            = var.location
   resource_group_name = var.rg_name
@@ -21,7 +21,7 @@ resource "azurerm_network_interface" "net-int" {
 
   ip_configuration {
     name                          = "internal"
-    subnet_id                     = azurerm_subnet.net-int.id
+    subnet_id                     = azurerm_subnet.net-int.id[0]
     private_ip_address_allocation = "Dynamic"
   }
 }
