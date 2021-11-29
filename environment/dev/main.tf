@@ -32,23 +32,23 @@ module "azurerm_storage_account"{
    
 }
 
-# # # Service Plan Module
-module "azurerm_app_service_plan"{
-  source = "../../modules/service-app"
-  project_name        = "FilipeLABS"
-  environment         = "dev"
-  location            = module.resource_group.location
-  rg_name             = module.resource_group.name
+# Service Plan Module
+# module "azurerm_app_service_plan"{
+#   source = "../../modules/service-app"
+#   project_name        = "FilipeLABS"
+#   environment         = "dev"
+#   location            = module.resource_group.location
+#   rg_name             = module.resource_group.name
     
-}
+# }
 
-# # # Service App Module
-module "azurerm_app_service"{
-  source = "../../modules/service-app"
-  project_name        = "FilipeLABS"
-  environment         = "dev"
-  location            = module.resource_group.location
-  rg_name             = module.resource_group.name
+# Service App Module
+# module "azurerm_app_service"{
+#   source = "../../modules/service-app"
+#   project_name        = "FilipeLABS"
+#   environment         = "dev"
+#   location            = module.resource_group.location
+#   rg_name             = module.resource_group.name
   
    
-}
+# }
