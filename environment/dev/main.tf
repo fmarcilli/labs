@@ -39,9 +39,34 @@ module "azurerm_virtual_machine"{
   environment         = "dev"
   location            = module.resource_group.location
   rg_name             = module.resource_group.name
-  subnet_id           = module.azurerm_subnet.subnet_id
+  nics = {
+    nic1 = {
+      subnet_id = module.azurerm_subnet.subnet_id
+      enable_accelerated_networking = "true"
+      primary = "true"
+    }
    
 }
+
+
+
+# VNET Module
+module "azurerm_virtual_network"{
+  source = "../../modules/vnet"
+  project_name        = "FilipeLABS"
+  environment         = "dev"
+  location            = module.resource_group.location
+  rg_name             = module.resource_group.name
+  vnet_name = "marcilli-network"
+  address_space = ["10.0.0.0/16"]
+  address_prefixes = ["10.0.2.0/24"]
+
+
+
+
+
+
+
 
 
 # Service Plan Module
