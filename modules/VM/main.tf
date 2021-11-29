@@ -1,7 +1,7 @@
 resource "azurerm_virtual_machine" "vmlab" {
   name                  = "vmlabs01"
   location              = var.location
-  resource_group_name   = var.name
+  resource_group_name   = var.rg_name
   #network_interface_ids = [azurerm_network_interface.vmlab.id]
   vm_size               = "Standard_DS1_v2"
 
