@@ -17,3 +17,19 @@ variable rg_name {
   type = string
   description = "Resource Location"
 }
+
+variable "vnet_name" {
+   type = string
+ }
+
+ variable "address_space" {
+  type        = list(string)
+ }
+
+ variable "subnet_prefixes" {
+    type        = list(string)
+ }
+
+variable "subnet_id" {
+  type = list(string)
+}

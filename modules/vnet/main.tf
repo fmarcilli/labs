@@ -15,7 +15,7 @@ resource "azurerm_subnet" "internal" {
 }
 
 resource "azurerm_network_interface" "net-int" {
-  name                = "example-nic"
+  name                = "marcilli-nic"
   location            = var.location
   resource_group_name = var.rg_name
 
