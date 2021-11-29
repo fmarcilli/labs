@@ -19,6 +19,7 @@ resource "azurerm_app_service" "app-service" {
 
  tags = {
     environment = "dev"
+    desc = "lab"
   }
 #  site_config {
 #    dotnet_framework_version = "v4.0"
