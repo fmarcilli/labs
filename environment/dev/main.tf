@@ -60,6 +60,7 @@ module "azurerm_virtual_network"{
   vnet_name = "marcilli-network"
   address_space = ["10.0.0.0/16"]
   address_prefixes = ["10.0.2.0/24"]
+}
 
 
 
