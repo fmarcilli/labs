@@ -21,7 +21,7 @@ module "resource_group"{
    
 }
 
-# Storage Account Module, teste.
+# Storage Account Module
 module "azurerm_storage_account"{
   source = "../../modules/storage-account"
   project_name        = "FilipeLABS"
