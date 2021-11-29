@@ -1,5 +1,5 @@
 resource "azurerm_app_service_plan" "service-plan" {
-  name                = "fmarcilli-v1-service-plan-v1" 
+  name                = "fmarcilli-v1-service-plan-v1-ag" 
   location            = var.location
   resource_group_name = var.rg_name
    kind = "Linux"
