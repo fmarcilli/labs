@@ -21,34 +21,34 @@ module "resource_group"{
    
 }
 
-# Storage Account Module
-module "azurerm_storage_account"{
-  source = "../../modules/storage-account"
-  project_name        = "FilipeLABS"
-  environment         = "dev"
-  location            = module.resource_group.location
-  rg_name             = module.resource_group.name
+# # Storage Account Module
+# module "azurerm_storage_account"{
+#   source = "../../modules/storage-account"
+#   project_name        = "FilipeLABS"
+#   environment         = "dev"
+#   location            = module.resource_group.location
+#   rg_name             = module.resource_group.name
   
    
-}
+# }
 
-# # Service Plan Module
-module "azurerm_app_service_plan"{
-  source = "../../modules/service-app"
-  project_name        = "FilipeLABS"
-  environment         = "dev"
-  location            = module.resource_group.location
-  rg_name             = module.resource_group.name
+# # # Service Plan Module
+# module "azurerm_app_service_plan"{
+#   source = "../../modules/service-app"
+#   project_name        = "FilipeLABS"
+#   environment         = "dev"
+#   location            = module.resource_group.location
+#   rg_name             = module.resource_group.name
     
-}
+# }
 
-# # Service App Module
-module "azurerm_app_service"{
-  source = "../../modules/service-app"
-  project_name        = "FilipeLABS"
-  environment         = "dev"
-  location            = module.resource_group.location
-  rg_name             = module.resource_group.name
+# # # Service App Module
+# module "azurerm_app_service"{
+#   source = "../../modules/service-app"
+#   project_name        = "FilipeLABS"
+#   environment         = "dev"
+#   location            = module.resource_group.location
+#   rg_name             = module.resource_group.name
   
    
-}
+# }
