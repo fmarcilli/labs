@@ -28,9 +28,21 @@ module "azurerm_storage_account"{
   environment         = "dev"
   location            = module.resource_group.location
   rg_name             = module.resource_group.name
+    
+}
+
+
+# # VM Module
+module "azurerm_virtual_machine"{
+  source = "../../modules/VM"
+  project_name        = "FilipeLABS"
+  environment         = "dev"
+  location            = module.resource_group.location
+  rg_name             = module.resource_group.name
   
    
 }
+
 
 # Service Plan Module
 # module "azurerm_app_service_plan"{
