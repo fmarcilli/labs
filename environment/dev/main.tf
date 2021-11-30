@@ -13,7 +13,7 @@ provider "azurerm" {
  }
 
 # Resource Group Module
-module "RESOURCE-GROUP"{
+module "resource_group"{
   source = "../../modules/resource-group"
   project_name        = "FilipeLABS"
   environment         = "dev"
@@ -22,23 +22,23 @@ module "RESOURCE-GROUP"{
 }
 
 # # Storage Account Module
-module "STORAGE-ACCOUNT"{
+module "azurerm_storage_account"{
   source = "../../modules/storage-account"
   project_name        = "FilipeLABS"
   environment         = "dev"
-  location            = module.resource-group.location
-  rg_name             = module.resource-group.name
+  location            = module.resource_group.location
+  rg_name             = module.resource_group.name
     
 }
 
 
 # VNET Module
-module "VNETS"{
+module "azurerm_virtual_network"{
   source = "../../modules/vnet"
   project_name        = "FilipeLABS"
   environment         = "dev"
-  location            = module.resource-group.location
-  rg_name             = module.resource-group.name
+  location            = module.resource_group.location
+  rg_name             = module.resource_group.name
   vnet_name           = "vnetlab"
   address_space       = ["10.0.0.0/16"]
   address_prefixes    = ["10.0.2.0/24"]
@@ -48,12 +48,12 @@ module "VNETS"{
     
 
 # # VM Module
-module "VMS"{
+module "azurerm_virtual_machine"{
   source = "../../modules/VM"
   project_name        = "FilipeLABS"
   environment         = "dev"
-  location            = module.resource-group.location
-  rg_name             = module.resource-group.name
+  location            = module.resource_group.location
+  rg_name             = module.resource_group.name
   subnet_id           = module.azurerm_virtual_network.vnet_subnet
    
 }
