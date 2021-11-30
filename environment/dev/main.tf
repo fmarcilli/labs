@@ -32,24 +32,6 @@ module "azurerm_storage_account"{
 }
 
 
-# # VM Module
-module "azurerm_virtual_machine"{
-  source = "../../modules/VM"
-  project_name        = "FilipeLABS"
-  environment         = "dev"
-  location            = module.resource_group.location
-  rg_name             = module.resource_group.name
-  nics = {
-    nic1 = {
-      subnet_id = module.azurerm_subnet.subnet_id
-      enable_accelerated_networking = "true"
-      primary = "true"
-    }
-   
-}
-
-
-
 # VNET Module
 module "azurerm_virtual_network"{
   source = "../../modules/vnet"
@@ -64,7 +46,18 @@ module "azurerm_virtual_network"{
 
 
 
-
+# # VM Module
+module "azurerm_virtual_machine"{
+  source = "../../modules/VM"
+  project_name        = "FilipeLABS"
+  environment         = "dev"
+  location            = module.resource_group.location
+  rg_name             = module.resource_group.name
+  network_interface_ids = [
+    azurerm_network_interface.example.id,
+  ]
+   
+}
 
 
 
