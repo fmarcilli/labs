@@ -39,9 +39,7 @@ module "azurerm_virtual_network"{
   environment         = "dev"
   location            = module.resource_group.location
   rg_name             = module.resource_group.name
-  vnet_name = "marcilli-network"
-  address_space = ["10.0.0.0/16"]
-  address_prefixes = ["10.0.2.0/24"]
+  
 }
 
 
@@ -53,9 +51,7 @@ module "azurerm_virtual_machine"{
   environment         = "dev"
   location            = module.resource_group.location
   rg_name             = module.resource_group.name
-  network_interface_ids = [
-    azurerm_network_interface.example.id,
-  ]
+  vnet_subnet_id      = module.azurerm_virtual_network.vnet_subnets[0]
    
 }
 
