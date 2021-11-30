@@ -13,7 +13,7 @@ provider "azurerm" {
  }
 
 # Resource Group Module
-module "RESOURCE GROUP"{
+module "RESOURCE-GROUP"{
   source = "../../modules/resource-group"
   project_name        = "FilipeLABS"
   environment         = "dev"
