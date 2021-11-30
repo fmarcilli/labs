@@ -26,8 +26,8 @@ module "STORAGE-ACCOUNT"{
   source = "../../modules/storage-account"
   project_name        = "FilipeLABS"
   environment         = "dev"
-  location            = module.resource_group.location
-  rg_name             = module.resource_group.name
+  location            = module.resource-group.location
+  rg_name             = module.resource-group.name
     
 }
 
@@ -37,8 +37,8 @@ module "VNETS"{
   source = "../../modules/vnet"
   project_name        = "FilipeLABS"
   environment         = "dev"
-  location            = module.resource_group.location
-  rg_name             = module.resource_group.name
+  location            = module.resource-group.location
+  rg_name             = module.resource-group.name
   vnet_name           = "vnetlab"
   address_space       = ["10.0.0.0/16"]
   address_prefixes    = ["10.0.2.0/24"]
@@ -52,8 +52,8 @@ module "VMS"{
   source = "../../modules/VM"
   project_name        = "FilipeLABS"
   environment         = "dev"
-  location            = module.resource_group.location
-  rg_name             = module.resource_group.name
+  location            = module.resource-group.location
+  rg_name             = module.resource-group.name
   subnet_id           = module.azurerm_virtual_network.vnet_subnet
    
 }
