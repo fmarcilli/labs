@@ -15,14 +15,3 @@ resource "azurerm_subnet" "subnet" {
   
 }
 
-# resource "azurerm_network_interface" "net-int" {
-#   name                = "marcilli-nic"
-#   location            = var.location
-#   resource_group_name = var.rg_name
-
-#   ip_configuration {
-#     name                          = "internal"
-#     subnet_id                     = azurerm_subnet.net-int.id
-#     private_ip_address_allocation = "Dynamic"
-#   }
-# }

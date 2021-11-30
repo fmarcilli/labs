@@ -18,3 +18,6 @@ variable rg_name {
   description = "Resource Location"
 }
 
+variable "subnet_id" {
+  type = string
+}

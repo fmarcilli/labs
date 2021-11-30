@@ -2,7 +2,7 @@ resource "azurerm_virtual_machine" "vmlab" {
   name                  = "vmlabs01"
   location              = var.location
   resource_group_name   = var.rg_name
-  #network_interface_ids = [azurerm_network_interface.vmlab.id]
+  network_interface_ids = [azurerm_network_interface.net-int.id]
   vm_size               = "Standard_DS1_v2"
 
    storage_image_reference {
@@ -27,5 +27,17 @@ resource "azurerm_virtual_machine" "vmlab" {
   }
   tags = {
     environment = "dev"
+  }
+}
+
+resource "azurerm_network_interface" "net-int" {
+  name                = "marcilli-nic"
+  location            = var.location
+  resource_group_name = var.rg_name
+
+  ip_configuration {
+    name                          = "internal"
+    subnet_id                     = var.subnet_id
+    private_ip_address_allocation = "Dynamic"
   }
 }
