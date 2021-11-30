@@ -22,7 +22,7 @@ module "resource_group_lab"{
 }
 
 # # Storage Account Module
-module "azurerm_storage_account"{
+module "storage_account_lab"{
   source = "../../modules/storage-account"
   project_name        = "FilipeLABS"
   environment         = "dev"
@@ -33,7 +33,7 @@ module "azurerm_storage_account"{
 
 
 # VNET Module
-module "azurerm_virtual_network"{
+module "vnet_lab"{
   source = "../../modules/vnet"
   project_name        = "FilipeLABS"
   environment         = "dev"
@@ -48,13 +48,13 @@ module "azurerm_virtual_network"{
     
 
 # # VM Module
-module "azurerm_virtual_machine"{
+module "vm_lab"{
   source = "../../modules/VM"
   project_name        = "FilipeLABS"
   environment         = "dev"
   location            = module.resource_group_lab.location
   rg_name             = module.resource_group_lab.name
-  subnet_id           = module.azurerm_virtual_network.vnet_subnet
+  subnet_id           = module.vnet_lab.vnet_subnet
    
 }
 
