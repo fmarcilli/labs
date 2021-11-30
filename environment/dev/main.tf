@@ -54,7 +54,7 @@ module "vm_lab"{
   environment         = "dev"
   location            = module.resource_group_lab.location
   rg_name             = module.resource_group_lab.name
-  subnet_id           = module.vnet_lab.vnet_subnet
+  subnet_id           = module.vnet_lab.subnet
    
 }
 
