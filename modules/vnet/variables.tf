@@ -22,13 +22,15 @@ variable "vnet_name" {
    type = string
  }
 
+
  variable "address_space" {
   type        = list(string)
  }
 
- variable "subnet_prefixes" {
+ variable "address_prefixes" {
     type        = list(string)
  }
+
 
 variable "subnet_id" {
   type = list(string)

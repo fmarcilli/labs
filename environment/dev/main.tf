@@ -39,21 +39,24 @@ module "azurerm_virtual_network"{
   environment         = "dev"
   location            = module.resource_group.location
   rg_name             = module.resource_group.name
+  vnet_name           = "vnetlab"
+  address_space       = ["10.0.0.0/16"]
+  address_prefix      = ["10.0.2.0/24"]
   
-}
-
-
+  }
+  
+    
 
 # # VM Module
-module "azurerm_virtual_machine"{
-  source = "../../modules/VM"
-  project_name        = "FilipeLABS"
-  environment         = "dev"
-  location            = module.resource_group.location
-  rg_name             = module.resource_group.name
-  vnet_subnet_id      = module.azurerm_virtual_network.vnet_subnets[0]
+# module "azurerm_virtual_machine"{
+#   source = "../../modules/VM"
+#   project_name        = "FilipeLABS"
+#   environment         = "dev"
+#   location            = module.resource_group.location
+#   rg_name             = module.resource_group.name
+#   vnet_subnet_id      = module.azurerm_virtual_network.vnet_subnets[0]
    
-}
+# }
 
 
 
