@@ -47,14 +47,14 @@ module "vnet_lab"{
   
     
 
-# # VM Module
+# VM Module
 module "vm_lab"{
   source = "../../modules/VM"
   project_name        = "FilipeLABS"
   environment         = "dev"
   location            = module.resource_group_lab.location
   rg_name             = module.resource_group_lab.name
-  subnet_id           = module.vnet_lab.subnet
+  subnet_id           = module.vnet_lab.subnet_id
    
 }
 
