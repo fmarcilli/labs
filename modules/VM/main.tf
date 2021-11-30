@@ -1,5 +1,5 @@
 resource "azurerm_virtual_machine" "vmlab" {
-  name                  = "vmlabs01"
+  name                  = "VM-${var.project_name}-${var.environment}"
   location              = var.location
   resource_group_name   = var.rg_name
   network_interface_ids = [azurerm_network_interface.net-int.id]
