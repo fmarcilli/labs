@@ -12,7 +12,7 @@ resource "azurerm_virtual_machine" "vmlab" {
     version   = "latest"
   }
   storage_os_disk {
-    name              = "myosdisk2"
+    name              = "VM-DISK-${var.project_name}-${var.environment}"
     caching           = "ReadWrite"
     create_option     = "FromImage"
     managed_disk_type = "Standard_LRS"
@@ -31,7 +31,7 @@ resource "azurerm_virtual_machine" "vmlab" {
 }
 
 resource "azurerm_network_interface" "net-int" {
-  name                = "marcilli-nic"
+  name                = "NIC-${var.project_name}-${var.environment}"
   location            = var.location
   resource_group_name = var.rg_name
 
