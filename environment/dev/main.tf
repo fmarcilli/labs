@@ -13,7 +13,7 @@ provider "azurerm" {
  }
 
 # Resource Group Module
-module "resource_group"{
+module "RESOURCE GROUP"{
   source = "../../modules/resource-group"
   project_name        = "FilipeLABS"
   environment         = "dev"
@@ -22,7 +22,7 @@ module "resource_group"{
 }
 
 # # Storage Account Module
-module "azurerm_storage_account"{
+module "STORAGE-ACCOUNT"{
   source = "../../modules/storage-account"
   project_name        = "FilipeLABS"
   environment         = "dev"
@@ -33,7 +33,7 @@ module "azurerm_storage_account"{
 
 
 # VNET Module
-module "azurerm_virtual_network"{
+module "VNETS"{
   source = "../../modules/vnet"
   project_name        = "FilipeLABS"
   environment         = "dev"
@@ -48,7 +48,7 @@ module "azurerm_virtual_network"{
     
 
 # # VM Module
-module "azurerm_virtual_machine"{
+module "VMS"{
   source = "../../modules/VM"
   project_name        = "FilipeLABS"
   environment         = "dev"
