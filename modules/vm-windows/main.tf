@@ -1,5 +1,9 @@
 resource "azurerm_windows_virtual_machine" "vmwindows" {
-  name                = "VMWIN-${var.environment}"
+for_each = toset(["vm-${var.project_name}-${var.environment}1","vm-${var.project_name}-${var.environment}2"])
+name = each.key
+
+
+  #name                = "VMWIN-${var.environment}"
   resource_group_name = var.rg_name
   location            = var.location
   size                = "Standard_F2"
