@@ -1,5 +1,5 @@
 resource "azurerm_windows_virtual_machine" "vmwindows" {
-  name                = "VMWIN-${var.project_name}-${var.environment}"
+  name                = "VMWIN-${var.environment}"
   resource_group_name = var.rg_name
   location            = var.location
   size                = "Standard_F2"
