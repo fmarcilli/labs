@@ -24,9 +24,9 @@ variable rg_name {
 # }
 
 variable storages {
-  type = map(object({
+  type = map(object
     name = string
-  ))}
+  )}
   
   default = {
     "first" = {
