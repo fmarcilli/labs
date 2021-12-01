@@ -16,7 +16,7 @@
 
 #Utilizando for each
 resource "azurerm_storage_account" "sto-account" {
-for_each = toset(["marcillist1", "marcillist2"])
+for_each = toset(["sto${var.project_name}${var.environment}1","sto${var.project_name}${var.environment}2"])
 name = each.key
 
   resource_group_name      = var.rg_name
@@ -28,3 +28,4 @@ name = each.key
     environment = "DEV"
   }
 }
+
