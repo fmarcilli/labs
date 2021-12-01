@@ -32,7 +32,6 @@ module "storage_account_lab"{
     
 }
 
-
 # # VNET Module
 # module "vnet_lab"{
 #   source = "../../modules/vnet"
