@@ -22,18 +22,3 @@ variable rg_name {
 #   type = string
 #   description = "numbers storage account"
 # }
-
-variable storages {
-  type = map(object
-    name = string
-  )}
-  
-  default = {
-    "first" = {
-      name = fiststo
-    }
-
-     "second" = {
-      name = secondsto
-    }
-  }
