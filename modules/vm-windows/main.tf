@@ -10,6 +10,7 @@ resource "azurerm_windows_virtual_machine" "vmwindows" {
   ]
 
   os_disk {
+    name                 = "VM-DISK-${var.project_name}-${var.environment}"
     caching              = "ReadWrite"
     storage_account_type = "Standard_LRS"
   }
