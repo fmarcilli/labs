@@ -18,3 +18,7 @@ variable rg_name {
   description = "Resource Location"
 }
 
+# variable sto-count {
+#   type = string
+#   description = "numbers storage account"
+# }
