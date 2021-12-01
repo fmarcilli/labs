@@ -14,7 +14,11 @@ name = each.key
   ]
 
   os_disk {
-    name                 = "VM-DISK-${var.project_name}-${var.environment}"
+    #name                 = "VM-DISK-${var.project_name}-${var.environment}"
+
+for_each = toset(["DISK-${var.project_name}-${var.environment}1","DISK-${var.project_name}-${var.environment}2"])
+name = each.key
+
     caching              = "ReadWrite"
     storage_account_type = "Standard_LRS"
   }
@@ -29,7 +33,10 @@ name = each.key
 
 
 resource "azurerm_network_interface" "net-int-vmwin" {
-  name                = "NIC1-${var.project_name}-${var.environment}"
+  #name                = "NIC1-${var.project_name}-${var.environment}"
+for_each = toset(["NIC-${var.project_name}-${var.environment}1","NIC-${var.project_name}-${var.environment}2"])
+name = each.key
+
   location            = var.location
   resource_group_name = var.rg_name
 
