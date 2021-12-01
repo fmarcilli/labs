@@ -47,7 +47,7 @@ module "vnet_lab"{
   
 # VM Module Windows
 module "vm_windows"{
-  source = "../../modules/VMvm-windows"
+  source = "../../modules/vm-windows"
   project_name        = "FilipeLABS"
   environment         = "dev"
   location            = module.resource_group_lab.location
