@@ -17,7 +17,7 @@ name = each.key
   os_disk {
     #name                 = "VM-DISK-${var.project_name}-${var.environment}"
 
-for_each = toset(["DISK-${var.project_name}-${var.environment}1","DISK-${var.project_name}-${var.environment}2"])
+for_each = toset(["vm-${var.project_name}-${var.environment}1","vm-${var.project_name}-${var.environment}2"])
 name = each.key
 
     caching              = "ReadWrite"
