@@ -10,7 +10,8 @@ name = each.key
   admin_username      = "adminuser"
   admin_password      = "P@$$w0rd1234!"
   network_interface_ids = [
-    azurerm_network_interface.net-int-vmwin.id,
+   # azurerm_network_interface.net-int-vmwin.id,
+   azurerm_network_interface.net-int-vmwin[each.key]
   ]
 
   os_disk {
