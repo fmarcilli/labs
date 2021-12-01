@@ -21,16 +21,16 @@ module "resource_group_lab"{
    
 }
 
-# Storage Account Module
-module "storage_account_lab"{
-  source = "../../modules/storage-account"
-  project_name        = "FilipeLABS"
-  environment         = "dev"
-  location            = module.resource_group_lab.location
-  rg_name             = module.resource_group_lab.name
+# # Storage Account Module
+# module "storage_account_lab"{
+#   source = "../../modules/storage-account"
+#   project_name        = "FilipeLABS"
+#   environment         = "dev"
+#   location            = module.resource_group_lab.location
+#   rg_name             = module.resource_group_lab.name
 
     
-}
+# }
 
 
 # # VNET Module
