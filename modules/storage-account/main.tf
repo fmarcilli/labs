@@ -16,7 +16,7 @@
 
 #Utilizando for each
 resource "azurerm_storage_account" "sto-account" {
-for_each = toset(["st1", "st2"])
+for_each = toset(["marcillist1", "marcillist2"])
 name = each.key
 
   resource_group_name      = var.rg_name
