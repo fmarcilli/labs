@@ -23,7 +23,7 @@ variable rg_name {
 #   description = "numbers storage account"
 # }
 
-variable var.storages {
+variable storages {
   type = map(object({
     name = string
   ))}
