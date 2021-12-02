@@ -18,7 +18,7 @@ name = each.value
     #name                 = "VM-DISK-${var.project_name}-${var.environment}"
 
 #for_each = toset(var.vm_name)
-name = "$(each.key)-disk1"
+name = "${each.key}-disk1"
 
     caching              = "ReadWrite"
     storage_account_type = "Standard_LRS"
