@@ -36,7 +36,7 @@ name = "${each.key}-disk1"
 resource "azurerm_network_interface" "net-int-vmwin" {
   #name                = "NIC1-${var.project_name}-${var.environment}"
 for_each = toset(var.vm_name)
-name = each.value
+name = "${each.value}-NET"
 
   location            = var.location
   resource_group_name = var.rg_name
