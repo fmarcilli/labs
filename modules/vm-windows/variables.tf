@@ -21,3 +21,8 @@ variable rg_name {
 variable "subnet_id" {
   type = string
 }
+
+variable "vm_name" {
+  type = list(string)
+  default = ["VM01", "VM02"]
+}

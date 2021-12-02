@@ -1,6 +1,6 @@
 resource "azurerm_windows_virtual_machine" "vmwindows" {
-for_each = toset(["vm-${var.project_name}-${var.environment}1","vm-${var.project_name}-${var.environment}2"])
-name = each.key
+for_each = toset(var.vm_name)
+name = each.value
 
 
   #name                = "VMWIN-${var.environment}"
@@ -11,14 +11,14 @@ name = each.key
   admin_password      = "P@$$w0rd1234!"
   network_interface_ids = [
    # azurerm_network_interface.net-int-vmwin.id,
-   azurerm_network_interface.net-int-vmwin[each.key]
-  ]
+   azurerm_network_interface.net-int-vmwin[each.key].id]
+  
 
   os_disk {
     #name                 = "VM-DISK-${var.project_name}-${var.environment}"
 
-for_each = toset(["vm-${var.project_name}-${var.environment}1","vm-${var.project_name}-${var.environment}2"])
-name = each.key
+#for_each = toset(var.vm_name)
+name = "$(each.key)-disk1"
 
     caching              = "ReadWrite"
     storage_account_type = "Standard_LRS"
@@ -35,8 +35,8 @@ name = each.key
 
 resource "azurerm_network_interface" "net-int-vmwin" {
   #name                = "NIC1-${var.project_name}-${var.environment}"
-for_each = toset(["NIC-${var.project_name}-${var.environment}1","NIC-${var.project_name}-${var.environment}2"])
-name = each.key
+for_each = toset(var.vm_name)
+name = each.value
 
   location            = var.location
   resource_group_name = var.rg_name
