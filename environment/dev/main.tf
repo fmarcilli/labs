@@ -74,6 +74,9 @@ module "nsg-lab" {
   environment         = "dev"
   location            = module.resource_group_lab.location
   rg_name             = module.resource_group_lab.name
+  vnet_name           = "vnetlab"
+  address_space       = ["10.0.0.0/16"]
+  address_prefixes    = ["10.0.2.0/24"]
   
   
 }
