@@ -15,5 +15,6 @@ resource "azurerm_network_security_rule" "nsg-sec_rule-lab" {
   source_address_prefix       = "*"
   destination_address_prefix  = "*"
   resource_group_name         = var.rg_name
-  network_security_group_name = "NSG-${var.project_name}-${var.environment}"
+  network_security_group_name = azurerm_network_security_group.nsg-lab.name
+
 }
