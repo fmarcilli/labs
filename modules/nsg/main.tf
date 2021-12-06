@@ -5,13 +5,13 @@ resource "azurerm_network_security_group" "nsg-lab" {
 }
 
 resource "azurerm_network_security_rule" "nsg-sec_rule-lab" {
-  name                        = "test123"
+  name                        = "RDP-Marcilli"
   priority                    = 100
-  direction                   = "Outbound"
+  direction                   = "Inbound"
   access                      = "Allow"
   protocol                    = "Tcp"
   source_port_range           = "*"
-  destination_port_range      = "*"
+  destination_port_range      = "3389"
   source_address_prefix       = "*"
   destination_address_prefix  = "*"
   resource_group_name         = var.rg_name
