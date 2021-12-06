@@ -42,6 +42,7 @@ module "vnet_lab"{
   vnet_name           = "vnetlab"
   address_space       = ["10.0.0.0/16"]
   address_prefixes    = ["10.0.2.0/24"]
+  network_security_group_id = module.nsg.network_security_group_id
   
   }
   
@@ -78,7 +79,7 @@ module "nsg-lab" {
   address_space       = ["10.0.0.0/16"]
   address_prefixes    = ["10.0.2.0/24"]
   subnet_id           = module.vnet_lab.subnet_id
-  network_security_group_id = module.nsg.network_security_group_id
+ 
     
  }
 
