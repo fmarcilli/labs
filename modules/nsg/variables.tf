@@ -31,7 +31,7 @@ variable "vnet_name" {
     type        = list(string)
  }
 
-# variable "nsg_name"{
-#     type = string
-# }
+variable "subnet_id" {
+  type = string
+}
 
