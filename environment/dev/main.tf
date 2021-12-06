@@ -70,7 +70,6 @@ module "resource_group_lab"{
 #NSG Module 
 module "nsg-lab" {
   source = "../../modules/nsg"
-   source = "../../modules/VM"
   project_name        = "FilipeLABS"
   environment         = "dev"
   location            = module.resource_group_lab.location
