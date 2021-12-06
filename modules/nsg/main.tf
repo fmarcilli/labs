@@ -4,7 +4,7 @@ resource "azurerm_network_security_group" "nsg-lab" {
   resource_group_name = var.rg_name
 }
 
-resource "azurerm_network_security_rule" "nsg-lab" {
+resource "azurerm_network_security_rule" "nsg-sec_rule-lab" {
   name                        = "test123"
   priority                    = 100
   direction                   = "Outbound"
