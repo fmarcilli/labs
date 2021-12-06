@@ -21,5 +21,6 @@ resource "azurerm_network_security_rule" "nsg-sec_rule-lab" {
 
 resource "azurerm_subnet_network_security_group_association" "association-nsg" {
   subnet_id                 = var.subnet_id
+  network_security_group_id = azurerm_network_security_group.nsg-lab.id
   #network_security_group_id = azurerm_network_security_group.nsg-lab.name
 }
