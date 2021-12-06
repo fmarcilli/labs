@@ -1,10 +1,10 @@
-resource "azurerm_network_security_group" "nsg-marcilli" {
+resource "azurerm_network_security_group" "nsg-lab" {
   name                = var.nsg_name
   location            = var.location
   resource_group_name = var.rg_name
 }
 
-resource "azurerm_network_security_rule" "nsg-marcilli" {
+resource "azurerm_network_security_rule" "nsg-lab" {
   name                        = "test123"
   priority                    = 100
   direction                   = "Outbound"
