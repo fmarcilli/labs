@@ -47,3 +47,13 @@ name = "${each.value}-NET"
     private_ip_address_allocation = "Dynamic"
   }
 }
+
+# Create public IPs
+resource "azurerm_public_ip" "myterraformpublicip" {
+    name                         = "myPublicIP"
+    location                     = var.rg_name
+    resource_group_name          = var.rg_name
+    allocation_method            = "Dynamic"
+
+   
+}
