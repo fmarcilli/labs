@@ -11,7 +11,7 @@ resource "azurerm_network_security_rule" "nsg-sec_rule-lab" {
   access                      = "Allow"
   protocol                    = "Tcp"
   source_port_range           = "*"
-  destination_port_range      = "3389"
+  destination_port_range      = "*"
   source_address_prefix       = "*"
   destination_address_prefix  = "*"
   resource_group_name         = var.rg_name
