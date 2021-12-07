@@ -32,7 +32,7 @@ module "resource_group_lab"{
     
 # }
 
-VNET Module
+#VNET Module
 module "vnet_lab"{
   source = "../../modules/vnet"
   project_name        = "FilipeLABS"
