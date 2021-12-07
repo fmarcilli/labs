@@ -51,7 +51,7 @@ name = "${each.value}-NET"
 # Create public IPs
 resource "azurerm_public_ip" "myterraformpublicip" {
     name                         = "myPublicIP"
-    location                     = var.rg_name
+    location                     = var.location
     resource_group_name          = var.rg_name
     allocation_method            = "Dynamic"
 
