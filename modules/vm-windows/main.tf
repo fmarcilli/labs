@@ -1,6 +1,6 @@
 resource "azurerm_windows_virtual_machine" "vmwindows" {
-for_each = toset(var.vm_name)
-name = each.value
+  for_each = toset(var.vm_name)
+  name = each.value
  
   resource_group_name = var.rg_name
   location            = var.location
@@ -38,7 +38,7 @@ name = "${each.value}-NET"
     name                          = "internal"
     subnet_id                     = var.subnet_id
     private_ip_address_allocation = "Dynamic"
-    
+    public_ip_address_id = azurerm_public_ip.public-marcilli.id
   }
 }
 
@@ -48,7 +48,6 @@ resource "azurerm_public_ip" "public-marcilli" {
 for_each = toset(var.vm_name)
 name = "${each.value}-PIP"
 
-   # name                         = "myPublicIP"
     location                     = var.location
     resource_group_name          = var.rg_name
     allocation_method            = "Dynamic"
