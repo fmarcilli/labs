@@ -11,7 +11,7 @@ resource "azurerm_network_security_rule" "nsg-sec_rule-lab" {
   access                      = "Allow"
   protocol                    = "Tcp"
   source_port_range           = "*"
-  destination_port_range      = "*"
+  destination_port_range      = "3389"
   source_address_prefix       = "*"
   destination_address_prefix  = "*"
   resource_group_name         = var.rg_name
@@ -19,6 +19,21 @@ resource "azurerm_network_security_rule" "nsg-sec_rule-lab" {
 
 }
 
+
+resource "azurerm_network_security_rule" "nsg-sec_rule-lab" {
+  name                        = "SSH-Marcilli"
+  priority                    = 101
+  direction                   = "Inbound"
+  access                      = "Allow"
+  protocol                    = "Tcp"
+  source_port_range           = "*"
+  destination_port_range      = "22"
+  source_address_prefix       = "*"
+  destination_address_prefix  = "*"
+  resource_group_name         = var.rg_name
+  network_security_group_name = azurerm_network_security_group.nsg-lab.name
+
+}
 resource "azurerm_subnet_network_security_group_association" "association-nsg" {
   subnet_id                 = var.subnet_id
   network_security_group_id = azurerm_network_security_group.nsg-lab.id
