@@ -38,13 +38,17 @@ name = "${each.value}-NET"
     name                          = "internal"
     subnet_id                     = var.subnet_id
     private_ip_address_allocation = "Dynamic"
-    public_ip_addres = azurerm_public_ip.public-marcilli.id
+    
   }
 }
 
 # Create public IPs
 resource "azurerm_public_ip" "public-marcilli" {
-    name                         = "myPublicIP"
+
+for_each = toset(var.vm_name)
+name = "${each.value}-PIP"
+
+   # name                         = "myPublicIP"
     location                     = var.location
     resource_group_name          = var.rg_name
     allocation_method            = "Dynamic"
