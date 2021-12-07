@@ -38,7 +38,7 @@ name = "${each.value}-NET"
     name                          = "internal"
     subnet_id                     = var.subnet_id
     private_ip_address_allocation = "Dynamic"
-    public_ip_address_id = azurerm_public_ip.public-marcilli.id
+    public_ip_address_id = azurerm_public_ip.public-marcilli[each.key].id
   }
 }
 
