@@ -67,7 +67,7 @@ module "vm_windows"{
    
 # }
 
-NSG Module 
+#NSG Module 
 module "nsg-lab" {
   source = "../../modules/nsg"
   project_name        = "FilipeLABS"
