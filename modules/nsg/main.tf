@@ -4,29 +4,33 @@ resource "azurerm_network_security_group" "nsg-lab" {
   resource_group_name = var.rg_name
 }
 
-resource "azurerm_network_security_rule" "nsg-sec_rule-lab" {
-  name                        = "RDP-Rule"
-  priority                    = 100
-  direction                   = "Inbound"
-  access                      = "Allow"
-  protocol                    = "Tcp"
-  source_port_range           = "*"
-  destination_port_range      = "3389"
-  source_address_prefix       = "*"
-  destination_address_prefix  = "*"
+
+resource "azurerm_network_security_rule" "testrules" {
+  for_each                    = local.nsgrules 
+  name                        = each.key
+  direction                   = each.value.direction
+  access                      = each.value.access
+  priority                    = each.value.priority
+  protocol                    = each.value.protocol
+  source_port_range           = each.value.source_port_range
+  destination_port_range      = each.value.destination_port_range
+  source_address_prefix       = each.value.source_address_prefix
+  destination_address_prefix  = each.value.destination_address_prefix
   resource_group_name         = var.rg_name
   network_security_group_name = azurerm_network_security_group.nsg-lab.name
-
 }
 
-# resource "azurerm_network_security_rule" "nsg-sec_rule-lab-02" {
+
+
+
+# resource "azurerm_network_security_rule" "nsg-sec_rule-lab" {
 #   name                        = "RDP-Rule"
-#   priority                    = 101
+#   priority                    = 100
 #   direction                   = "Inbound"
 #   access                      = "Allow"
 #   protocol                    = "Tcp"
 #   source_port_range           = "*"
-#   destination_port_range      = "22"
+#   destination_port_range      = "3389"
 #   source_address_prefix       = "*"
 #   destination_address_prefix  = "*"
 #   resource_group_name         = var.rg_name
@@ -34,22 +38,6 @@ resource "azurerm_network_security_rule" "nsg-sec_rule-lab" {
 
 # }
 
-
-# security_rule{
-#   name = "rule-1"
-#    priority                   = 100
-#    direction                  = "Inbound"
-#    access                     = "Deny"
-#    protocol                   = "*"
-#    source_port_range          = "*"
-#    destination_port_range     = "3389"
-#    source_address_prefix       = "*"
-#    destination_address_prefix  = "*"
-#    resource_group_name         = var.rg_name
-#    network_security_group_name = azurerm_network_security_group.nsg-lab.name
-   
-
-# }
 
 
 resource "azurerm_subnet_network_security_group_association" "association-nsg" {
