@@ -12,7 +12,7 @@ provider "azurerm" {
     features {}
  }
 
-#teste1
+#teste1 ok
 
 # Resource Group Module
 module "resource_group_lab"{
