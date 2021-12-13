@@ -13,7 +13,7 @@ provider "azurerm" {
  }
 
 
-## LAB HML
+## LAB HML 2.0
 
 
 #Resource Group Module
