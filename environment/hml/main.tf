@@ -12,6 +12,8 @@ provider "azurerm" {
     features {}
  }
 
+#teste1
+
 # # Resource Group Module
 # # module "resource_group_lab"{
 # #   source = "../../modules/resource-group"
