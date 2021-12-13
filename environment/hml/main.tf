@@ -4,7 +4,7 @@ terraform {
     resource_group_name  = "RG-Terraform"
     storage_account_name = "terraformmarcilli"
     container_name       = "envi-lab"
-    key                  = "dev-terraform.tfstate"
+    key                  = "hml-terraform.tfstate"
     }
   }
 
@@ -16,7 +16,7 @@ provider "azurerm" {
 # # module "resource_group_lab"{
 # #   source = "../../modules/resource-group"
 # #   project_name        = "FilipeLABS"
-# #   environment         = "dev"
+# #   environment         = "hml"
 # #   location            = "EastUS"
    
 # # }
@@ -25,7 +25,7 @@ provider "azurerm" {
 # module "storage_account_lab"{
 #   source = "../../modules/storage-account"
 #   project_name        = "filipelabs"
-#   environment         = "dev"
+#   environment         = "hml"
 #   location            = module.resource_group_lab.location
 #   rg_name             = module.resource_group_lab.name
 
@@ -36,7 +36,7 @@ provider "azurerm" {
 # module "vnet_lab"{
 #   source = "../../modules/vnet"
 #   project_name        = "FilipeLABS"
-#   environment         = "dev"
+#   environment         = "hml"
 #   location            = module.resource_group_lab.location
 #   rg_name             = module.resource_group_lab.name
 #   vnet_name           = "vnetlab"
@@ -49,7 +49,7 @@ provider "azurerm" {
 # module "vm_windows"{
 #   source = "../../modules/vm-windows"
 #   project_name        = "FLABS"
-#   environment         = "dev"
+#   environment         = "hml"
 #   location            = module.resource_group_lab.location
 #   rg_name             = module.resource_group_lab.name
 #   subnet_id           = module.vnet_lab.subnet_id
@@ -60,7 +60,7 @@ provider "azurerm" {
 # # module "vm_lab"{
 # #   source = "../../modules/VM"
 # #   project_name        = "FilipeLABS"
-# #   environment         = "dev"
+# #   environment         = "hml"
 # #   location            = module.resource_group_lab.location
 # #   rg_name             = module.resource_group_lab.name
 # #   subnet_id           = module.vnet_lab.subnet_id
@@ -71,7 +71,7 @@ provider "azurerm" {
 # module "nsg-lab" {
 #   source = "../../modules/nsg"
 #   project_name        = "FilipeLABS"
-#   environment         = "dev"
+#   environment         = "hml"
 #   location            = module.resource_group_lab.location
 #   rg_name             = module.resource_group_lab.name
 #   vnet_name           = "vnetlab"
@@ -88,7 +88,7 @@ provider "azurerm" {
 # module "azurerm_app_service_plan"{
 #   source = "../../modules/service-app"
 #   project_name        = "FilipeLABS"
-#   environment         = "dev"
+#   environment         = "hml"
 #   location            = module.resource_group.location
 #   rg_name             = module.resource_group.name
     
@@ -98,7 +98,7 @@ provider "azurerm" {
 # module "azurerm_app_service"{
 #   source = "../../modules/service-app"
 #   project_name        = "FilipeLABS"
-#   environment         = "dev"
+#   environment         = "hmldev"
 #   location            = module.resource_group.location
 #   rg_name             = module.resource_group.name
   
