@@ -17,13 +17,13 @@ provider "azurerm" {
 
 
 #Resource Group Module
-# module "resource_group_lab"{
-#   source = "../../modules/resource-group"
-#   project_name        = "FilipeLABS"
-#   environment         = "hml"
-#   location            = "EastUS"
+module "resource_group_lab"{
+  source = "../../modules/resource-group"
+  project_name        = "FilipeLABS"
+  environment         = "hml"
+  location            = "EastUS"
    
-# }
+}
 
 # # Storage Account Module
 # module "storage_account_lab"{
